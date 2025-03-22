@@ -1,10 +1,10 @@
 # audiolens
 
-このアプリケーションは、マイクからの音声をリアルタイムで録音し、whisper.cppを使用して文字起こしを行います。さらに、Ollamaを使用してテキスト分析（要約、キーワード抽出、問題点検出、進行状況評価）を行います。すべての処理はローカル環境で完結し、インターネット接続は不要です。
+このアプリケーションは、マイクからの音声をリアルタイムで録音し、whisper.cpp を使用して文字起こしを行います。さらに、Ollama を使用してテキスト分析（要約、キーワード抽出、問題点検出、進行状況評価）を行います。すべての処理はローカル環境で完結し、インターネット接続は不要です。
 
 ## 前提条件
 
-- Go 1.16以上
+- Go 1.16 以上
 - [PortAudio](http://www.portaudio.com/)
 - [whisper.cpp](https://github.com/ggerganov/whisper.cpp)
 - [Ollama](https://ollama.ai/)
@@ -26,7 +26,7 @@ brew install whisper-cpp
 brew install ollama
 ```
 
-#### Ollamaモデルのダウンロード
+#### Ollama モデルのダウンロード
 
 ```bash
 # アプリケーションで使用するGemma 3モデルをダウンロード
@@ -51,26 +51,28 @@ chmod +x bin/whisper_recorder
 
 ## 使用方法
 
-1. Ollamaを起動します
+1. Serve ollama
+
 ```bash
 ollama serve
 ```
 
 2. 別のターミナルでアプリケーションを実行します
+
 ```bash
 ./bin/whisper_recorder
 ```
 
 3. 利用可能なマイクデバイスのリストから使用するデバイスを選択します
 
-4. Ctrl+Cを押して録音を停止します
+4. Ctrl+C を押して録音を停止します
 
 ## 機能
 
 - マイクからのリアルタイム録音
 - 定期的な録音セグメントの保存
-- whisper.cppを使用した音声文字起こし
-- Ollamaを使用したテキスト分析
+- whisper.cpp を使用した音声文字起こし
+- Ollama を使用したテキスト分析
   - 要約生成
   - キーワード抽出
   - 問題点抽出
@@ -105,6 +107,6 @@ ollama serve
 
 ## 注意事項
 
-- 文字起こしの精度はwhisper.cppのモデルに依存します
-- Ollamaのモデルによって分析結果の質が変わります
+- 文字起こしの精度は whisper.cpp のモデルに依存します
+- Ollama のモデルによって分析結果の質が変わります
 - アプリケーションの処理速度はご使用のコンピュータの性能に依存します
